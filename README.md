@@ -1,8 +1,8 @@
-This was a bigger undertaking than i thought. 
+This was a bigger undertaking than I thought. 
 
-This is a webserver that hosts an HTML and CSS file using SPIFFS so it doesn't need a microSD
-all it does is display a web form that you can use to change the led colors.
+This is a webserver that hosts an HTML and CSS file using SPIFFS so it doesn't need a microSD.
+All it does is display a web form that you can use to change the LED colors.
 
-I guess it also supports over the air updates which is pretty cool.
-honestly learned a lot about how html works and http work. 
+It also supports over-the-air updates which is pretty cool.
+honestly, I learned a lot about how HTML and HTTP work. 
 I think i want to try getting all this to run on the second core of the ESP32 so that it can handle requests while performing other tasks.
