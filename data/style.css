@@ -1,0 +1,91 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Dark background */
+    color: #ccc; /* Light text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+.container {
+    background: #333; /* Slightly lighter dark background */
+    color: #ccc; /* Light text */
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form styling */
+.control-form {
+    margin: 20px 0;
+}
+
+.control-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.control-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #222; /* Input dark background */
+    color: #ccc; /* Input light text */
+}
+
+.control-form input::placeholder {
+    color: #777; /* Placeholder text color */
+}
+
+.control-form button {
+    background-color: #007BFF; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Color input styling */
+.color-input {
+    display: flex;
+    align-items: center;
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border: 1px solid #555; /* Border matches inputs */
+    border-radius: 5px;
+    background-color: #222; /* Default dark background */
+    transition: background-color 0.3s;
+}
+
+/* Current values display */
+.current-values h2 {
+    margin-top: 20px;
+}
+
+.current-values p {
+    font-size: 1.2em;
+    margin: 5px 0;
+    font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Control Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 Web Server</h1>
+        <form action="/update" method="GET" class="control-form">
+            <label for="brightness">Brightness:</label>
+            <input type="number" id="brightness" name="brightness" min="0" max="255" placeholder="Enter Brightness">
+            
+            <label for="color">Color:</label>
+            <div class="color-input">
+                <input type="text" id="color" name="color" placeholder="Enter Color">
+                <div id="colorBox" class="color-box"></div>
+            </div>
+            
+            <button type="submit">Update</button>
+        </form>
+        <div class="current-values">
+            <h2>Current Values</h2>
+            <p id="current-brightness">Brightness: Loading...</p>
+            <p id="current-color">Color: Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Update color box based on input
+        const colorInput = document.getElementById('color');
+        const colorBox = document.getElementById('colorBox');
+        colorInput.addEventListener('input', () => {
+            colorBox.style.backgroundColor = colorInput.value;
+        });
+
+        // Fetch current values from the ESP32 and update the page
+        async function fetchCurrentValues() {
+            const response = await fetch('/values');
+            const data = await response.json();
+            document.getElementById('current-brightness').innerText = `Brightness: ${data.brightness}`;
+            document.getElementById('current-color').innerText = `Color: ${data.color}`;
+            colorBox.style.backgroundColor = data.color;
+        }
+
+        // Update the current values when the page loads
+        window.onload = fetchCurrentValues;
+    </script>
+</body>
+</html>
